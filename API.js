@@ -1,9 +1,9 @@
 // JAVASCRIPT এর যেকোন Array , Object বা Value কে JSON এর String এ convert করার জন্য JSON.stringify ব্যাবহার করা হয় । নিচে তার উধাহরন দেওয়া হলো -
 
 const Data1 = { Id: 1, Name: "KING ALVI", Job: "Bisnessman" };
-// console.log(Data1);
+console.log(Data1);
 const stringifyByJSON1 = JSON.stringify(Data1);
-// console.log(stringifyByJSON1);
+console.log(stringifyByJSON1);
 
 
 
