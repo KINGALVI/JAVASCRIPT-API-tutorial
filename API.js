@@ -16,3 +16,15 @@ const stringifyByJSON2 = JSON.stringify(Data2);
 console.log(stringifyByJSON2);
 const parseByJSON = JSON.parse(stringifyByJSON2);
 console.log(parseByJSON);
+
+
+
+
+
+// JAVASCRIPT API এর JSON Data কে ব্যবহার করতে হলে fetch ব্যবহার করতে হবে । নিচে তার উধাহরন দেওয়া হলো - 
+
+document.getElementById('API-Button').addEventListener('click', function () {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
+})
