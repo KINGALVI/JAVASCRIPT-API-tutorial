@@ -46,3 +46,28 @@ document.getElementById('Email-Button').addEventListener('click', function () {
         }
     }
 })
+
+
+
+
+
+// Most Important Example - 4 
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .then(Data => fetchData(Data))
+
+const fetchData = (Data) => {
+    const postContainer = document.getElementById('Post-Container');
+    for(const post of Data){
+        const createElemant = document.createElement('div');
+        createElemant.classList.add('Post-Container')
+        createElemant.innerHTML = `
+        <hr/>
+        <h1>${post.id}. ${post.title}</h1>
+        <p>${post.body}</p>
+        <hr/>
+        `
+        postContainer.appendChild(createElemant);
+    }
+}
