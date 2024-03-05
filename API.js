@@ -1,3 +1,15 @@
+// JAVASCRIPT API এর JSON Data কে ব্যবহার করতে হলে fetch ব্যবহার করতে হবে । নিচে তার উধাহরন দেওয়া হলো - 
+
+document.getElementById('API-Button').addEventListener('click', function () {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(json => console.log(json))
+})
+
+
+
+
+
 // JAVASCRIPT এর যেকোন Array , Object বা Value কে JSON এর String এ convert করার জন্য JSON.stringify ব্যাবহার করা হয় । নিচে তার উধাহরন দেওয়া হলো -
 
 const Data1 = { Id: 1, Name: "KING ALVI", Job: "Bisnessman" };
@@ -21,10 +33,3 @@ console.log(parseByJSON);
 
 
 
-// JAVASCRIPT API এর JSON Data কে ব্যবহার করতে হলে fetch ব্যবহার করতে হবে । নিচে তার উধাহরন দেওয়া হলো - 
-
-document.getElementById('API-Button').addEventListener('click', function () {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-        .then(response => response.json())
-        .then(json => console.log(json))
-})
