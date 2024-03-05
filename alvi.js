@@ -59,7 +59,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
 const fetchData = (Data) => {
     const postContainer = document.getElementById('Post-Container');
-    for(const post of Data){
+    for (const post of Data) {
         const createElemant = document.createElement('div');
         createElemant.classList.add('Post-Container')
         createElemant.innerHTML = `
@@ -71,3 +71,22 @@ const fetchData = (Data) => {
         postContainer.appendChild(createElemant);
     }
 }
+
+
+
+
+
+// Example - 5
+
+document.getElementById('quote-btn').addEventListener('click', function () {
+    fetch('https://api.kanye.rest')
+        .then(res => res.json())
+        .then(Data => quoteLine(Data))
+
+
+    const quoteLine = (Data) => {
+        const quotePlace = document.getElementById('quote');
+        quotePlace.innerText = Data.quote;
+    }
+
+})
