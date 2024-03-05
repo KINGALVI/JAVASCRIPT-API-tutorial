@@ -97,7 +97,7 @@ document.getElementById('quote-btn').addEventListener('click', function () {
 
 
 
-// Example-6
+// Most Important Example-6
 
 document.getElementById('user-btn').addEventListener('click', function () {
 
@@ -106,13 +106,13 @@ document.getElementById('user-btn').addEventListener('click', function () {
         .then(Data => userInformation(Data.results));
 
     const userInformation = Data => {
-console.log(Data)
+
         const userContainer = document.getElementById('user-container');
 
         for (const user of Data) {
             const createElemant = document.createElement('div');
             createElemant.classList.add('user-container');
-            createElemant.innerHTML=`
+            createElemant.innerHTML = `
             <h1 class="user-info">User information</h1>
             <img src=${user.picture.large}>
             <p>Name : ${user.name.title}.${user.name.first} ${user.name.last} </p>
