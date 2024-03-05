@@ -53,24 +53,26 @@ document.getElementById('Email-Button').addEventListener('click', function () {
 
 // Most Important Example - 4 
 
-fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(Data => fetchData(Data))
+document.getElementById('post-btn').addEventListener('click', function () {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(res => res.json())
+        .then(Data => fetchData(Data))
 
-const fetchData = (Data) => {
-    const postContainer = document.getElementById('Post-Container');
-    for (const post of Data) {
-        const createElemant = document.createElement('div');
-        createElemant.classList.add('Post-Container')
-        createElemant.innerHTML = `
+    const fetchData = (Data) => {
+        const postContainer = document.getElementById('Post-Container');
+        for (const post of Data) {
+            const createElemant = document.createElement('div');
+            createElemant.classList.add('Post-Container')
+            createElemant.innerHTML = `
         <hr/>
         <h1>${post.id}. ${post.title}</h1>
         <p>${post.body}</p>
         <hr/>
         `
-        postContainer.appendChild(createElemant);
+            postContainer.appendChild(createElemant);
+        }
     }
-}
+})
 
 
 
@@ -87,6 +89,41 @@ document.getElementById('quote-btn').addEventListener('click', function () {
     const quoteLine = (Data) => {
         const quotePlace = document.getElementById('quote');
         quotePlace.innerText = Data.quote;
+    }
+
+})
+
+
+
+
+
+// Example-6
+
+document.getElementById('user-btn').addEventListener('click', function () {
+
+    fetch('https://randomuser.me/api/?results=10')
+        .then(res => res.json())
+        .then(Data => userInformation(Data.results));
+
+    const userInformation = Data => {
+console.log(Data)
+        const userContainer = document.getElementById('user-container');
+
+        for (const user of Data) {
+            const createElemant = document.createElement('div');
+            createElemant.classList.add('user-container');
+            createElemant.innerHTML=`
+            <h1 class="user-info">User information</h1>
+            <img src=${user.picture.large}>
+            <p>Name : ${user.name.title}.${user.name.first} ${user.name.last} </p>
+            <p>Gender : ${user.gender} </p>
+            <p>Email : ${user.email}</p>
+            <p>Location : ${user.location.city} , ${user.location.state} , ${user.location.country}
+
+            `
+            userContainer.appendChild(createElemant);
+        }
+
     }
 
 })

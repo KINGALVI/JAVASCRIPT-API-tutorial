@@ -1,3 +1,14 @@
 .Post-Container{
     background-color: aqua;
 }
+
+.user-container{
+    background-color: rgb(110, 149, 233);
+    padding: 50px;
+    margin:  50px;
+}
+
+.user-info{
+    background-color: rgb(16, 137, 158);
+    text-align: center;
+}
