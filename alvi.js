@@ -51,7 +51,7 @@ document.getElementById('Email-Button').addEventListener('click', function () {
 
 
 
-// Most Important Example - 4 
+// Very Important Example - 4 
 
 document.getElementById('post-btn').addEventListener('click', function () {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -97,7 +97,7 @@ document.getElementById('quote-btn').addEventListener('click', function () {
 
 
 
-// Most Important Example-6
+// Very Important Example - 6
 
 document.getElementById('user-btn').addEventListener('click', function () {
 
@@ -132,7 +132,7 @@ document.getElementById('user-btn').addEventListener('click', function () {
 
 
 
-// Most Important Example -7
+// Very Important Example - 7
 
 document.getElementById('country-btn').addEventListener('click', function () {
 
@@ -188,22 +188,59 @@ const countryDetailInfo = (Country) => {
 
 
 
-// Example - 8 
 
-document.getElementById('food-button').addEventListener('click', function () {
 
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///// Very Very Important Example - 8 ///// 
+
+const foodApiData = (foodData) => {
+    const Api = `https://www.themealdb.com/api/json/v1/1/search.php?s=${foodData}`
+    fetch(Api)
         .then(res => res.json())
         .then(Data => foodDataDisplay(Data.meals))
 
-    const foodDataDisplay = Data => {
+}
 
-        const foodContainer = document.getElementById('food-card-container');
 
-        Data.forEach(food => {
-            const createElemant = document.createElement('div');
-            createElemant.classList.add('col')
-            createElemant.innerHTML = `
+document.getElementById('food-button').addEventListener('click', function () {
+
+    const foodSearchField = document.getElementById('food-search');
+    const foodSearchText = foodSearchField.value;
+    foodApiData(foodSearchText);
+
+})
+
+
+const foodDataDisplay = Data => {
+
+    const foodContainer = document.getElementById('food-card-container');
+
+    Data.forEach(food => {
+        const createElemant = document.createElement('div');
+        createElemant.classList.add('col')
+        createElemant.innerHTML = `
              <div class="card">
                <br><br>
                <center> <img src="${food.strMealThumb}" class="card-img-top h-25 w-50" alt="..."> </center>
@@ -221,9 +258,40 @@ document.getElementById('food-button').addEventListener('click', function () {
                </div>
              </div>
         `
-            foodContainer.appendChild(createElemant);
-        });
+        foodContainer.appendChild(createElemant);
+    });
 
-    }
+}
 
-})
+///// Very Very Important Example - 8 /////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Example - 9 
