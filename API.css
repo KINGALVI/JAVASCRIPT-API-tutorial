@@ -20,3 +20,7 @@
     align-self: center;
     margin: 50px;
 }
+
+.country-detail-container {
+    background-color: aquamarine;
+}

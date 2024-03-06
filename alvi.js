@@ -170,14 +170,16 @@ const countryApi = (Data) => {
 }
 
 const countryDetailInfo = (Country) => {
-console.log(Country)
-const countryInfoContainer = document.getElementById('country-info-container');
-countryInfoContainer.innerHTML = `
-<img src="${Country.flags.png}">
-<h2> Country Officral Name : ${Country.name.official} </h2>
-<h2> Continents : ${Country.continents} </h2>
-<h2> Capital : ${Country.capital} </h2>
-<h2> Freedom Status : ${Country.independent === true ? " This is a Independent Country " : " This is not a Independent Country "} </h2>
+
+    console.log(Country)
+    const countryInfoContainer = document.getElementById('country-info-container');
+    countryInfoContainer.classList.add('country-detail-container')
+    countryInfoContainer.innerHTML = `
+    <img src="${Country.flags.png}">
+    <h2> Country Officral Name : ${Country.name.official} </h2>
+    <h2> Continents : ${Country.continents} </h2>
+    <h2> Capital : ${Country.capital} </h2>
+    <h2> Freedom Status : ${Country.independent === true ? " This is a Independent Country " : " This is not a Independent Country "} </h2>
 `
 
 }
