@@ -12,3 +12,11 @@
     background-color: rgb(16, 137, 158);
     text-align: center;
 }
+
+.country {
+    background-color: rgb(34, 170, 170);
+    display: grid;
+    justify-content: center;
+    align-self: center;
+    margin: 50px;
+}

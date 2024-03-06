@@ -114,7 +114,7 @@ document.getElementById('user-btn').addEventListener('click', function () {
             createElemant.classList.add('user-container');
             createElemant.innerHTML = `
             <h1 class="user-info">User information</h1>
-            <img src=${user.picture.large}>
+            <img src="${user.picture.large}">
             <p>Name : ${user.name.title}.${user.name.first} ${user.name.last} </p>
             <p>Gender : ${user.gender} </p>
             <p>Email : ${user.email}</p>
@@ -123,6 +123,38 @@ document.getElementById('user-btn').addEventListener('click', function () {
             `
             userContainer.appendChild(createElemant);
         }
+
+    }
+
+})
+
+
+
+
+
+// Most Important Example -7
+
+document.getElementById('country-btn').addEventListener('click', function () {
+
+    fetch('https://restcountries.com/v3.1/all')
+        .then(res => res.json())
+        .then(Data => countryInfo(Data));
+
+    const countryInfo = Data => {
+
+        const countryContainer = document.getElementById('country-container');
+
+        Data.forEach(country => {
+            const createElemant = document.createElement('div');
+            createElemant.classList.add('country');
+            createElemant.innerHTML = `
+            <h2> Country Name : ${country.name.common} </h2>
+            <img src="${country.flags.png}">
+            <h3> Official Name : ${country.name.official} </h3>
+            <h3> Capital : ${country.capital ? country.capital[0] : 'No Capital'} </h3>
+            `
+            countryContainer.appendChild(createElemant);
+        })
 
     }
 
