@@ -205,16 +205,19 @@ document.getElementById('food-button').addEventListener('click', function () {
             createElemant.classList.add('col')
             createElemant.innerHTML = `
              <div class="card">
-               <img src="${food.strMealThumb}" class="card-img-top h-25 w-50" alt="...">
+               <br><br>
+               <center> <img src="${food.strMealThumb}" class="card-img-top h-25 w-50" alt="..."> </center>
                <div class="card-body">
-                   <h3 class="card-title">Food Name : ${food.strMeal} </h3>
-                   <br><br>
-                   <center> <h4> Food Ingredients </h4> </center>
-                   <h5> ${food.strIngredient1} , ${food.strIngredient2} , ${food.strIngredient3} , ${food.strIngredient4} , ${food.strIngredient5} , ${food.strIngredient6} , ${food.strIngredient7} , ${food.strIngredient8} , ${food.strIngredient9} </h5>
-                   <br><br>
-                   <center> <h4> Food Instructions </h4> </center>
-                   <p class="card-text">${food.strInstructions}</p>
-                   <p class="card-text"> Watch the video : <a href="#" class="stretched-link text-danger" style="position: relative;"> ${food.strYoutube} </a> </p>
+               <center>
+               <h3 class="card-title">Food Name : ${food.strMeal} </h3>
+               <br><br>
+               <center> <h4> Food Ingredients </h4> </center>
+               <h5> ${food.strIngredient1} , ${food.strIngredient2} , ${food.strIngredient3} , ${food.strIngredient4} , ${food.strIngredient5} , ${food.strIngredient6} , ${food.strIngredient7} , ${food.strIngredient8} , ${food.strIngredient9} </h5>
+               <br><br>
+               <center> <h4> Food Instructions </h4> </center>
+               <p class="card-text">${food.strInstructions}</p>
+               <p class="card-text"> Watch the video : <a href="#" class="stretched-link text-danger" style="position: relative;"> ${food.strYoutube} </a> </p>
+               </center>
                </div>
              </div>
         `
