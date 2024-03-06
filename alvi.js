@@ -148,14 +148,36 @@ document.getElementById('country-btn').addEventListener('click', function () {
             const createElemant = document.createElement('div');
             createElemant.classList.add('country');
             createElemant.innerHTML = `
-            <h2> Country Name : ${country.name.common} </h2>
-            <img src="${country.flags.png}">
-            <h3> Official Name : ${country.name.official} </h3>
-            <h3> Capital : ${country.capital ? country.capital[0] : 'No Capital'} </h3>
-            `
+        <h2> Country Name : ${country.name.common} </h2>
+        <img src="${country.flags.png}">
+        <h3> Official Name : ${country.name.official} </h3>
+        <h3> Capital : ${country.capital ? country.capital[0] : 'No Capital'} </h3>
+        <button onclick="countryApi('${country.cca2}')"> Detail Information </button>
+        `;
             countryContainer.appendChild(createElemant);
-        })
 
-    }
+        });
+    };
 
 })
+
+
+const countryApi = (Data) => {
+    const detailCountryData = `https://restcountries.com/v3.1/alpha/${Data}`
+    fetch(detailCountryData)
+        .then(res => res.json())
+        .then(Data => countryDetailInfo(Data[0]))
+}
+
+const countryDetailInfo = (Country) => {
+console.log(Country)
+const countryInfoContainer = document.getElementById('country-info-container');
+countryInfoContainer.innerHTML = `
+<img src="${Country.flags.png}">
+<h2> Country Officral Name : ${Country.name.official} </h2>
+<h2> Continents : ${Country.continents} </h2>
+<h2> Capital : ${Country.capital} </h2>
+<h2> Freedom Status : ${Country.independent === true ? " This is a Independent Country " : " This is not a Independent Country "} </h2>
+`
+
+}
