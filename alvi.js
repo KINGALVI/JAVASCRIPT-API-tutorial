@@ -234,10 +234,25 @@ document.getElementById('food-button').addEventListener('click', function () {
 })
 
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById("food-search").addEventListener("keyup", function (event) {
+
+        if (event.key === "Enter") {
+            document.getElementById("food-button").click();
+            event.preventDefault();
+        }
+
+    });
+
+
+});
+
+
 const foodDataDisplay = Data => {
 
     const foodContainer = document.getElementById('food-card-container');
-
+    foodContainer.innerHTML = '';
     Data.forEach(food => {
         const createElemant = document.createElement('div');
         createElemant.classList.add('col')
