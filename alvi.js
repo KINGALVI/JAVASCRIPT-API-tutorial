@@ -229,6 +229,7 @@ document.getElementById('food-button').addEventListener('click', function () {
     const foodSearchField = document.getElementById('food-search');
     const foodSearchText = foodSearchField.value;
     foodApiData(foodSearchText);
+    foodSearchField.value = '';
 
 })
 
