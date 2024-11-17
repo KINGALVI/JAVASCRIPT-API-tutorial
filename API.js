@@ -56,7 +56,7 @@ console.log(parseByJSON);
 // ৪। JAVASCRIPT এ API Data কে ব্যবহার করার জন্য মূলত দুই রকমের fetch Operation করা হয় । নিচে আমার তার উধাহরণ দেওয়া হল -
 
 
-//// ১ । এটি হলো Normal fetch , যেখানে একসাথে Operation হয়ে থাকে । 
+//// ১ । হলো Normal fetch , যেখানে একসাথে Operation হয়ে থাকে । 
 
 const loadUserFetch = () => {
     const url = 'https://randomuser.https://randomuser.me/api/?gender-female';
@@ -66,19 +66,15 @@ const loadUserFetch = () => {
         .catch(error => console.log(error));
 }
 
-//// ২ । এটি হলো await fetch , যেখানে একটি পর একটি Opreration হয়ে থাকে । প্রথমে fetch এর Operation হয়ে থাকে । তারপর fetch Operation থেকে যে Responce পাওয়া যায় , সেই Responce কে json এ Convert করা হয় । এরপর সব শেষে API এর Data কে Show করা হয় । নিচে আমার তার উধাহরণ দেওয়া হল - 
+//// ২ । হলো async/await fetch , যেখানে একটি পর একটি Opreration হয়ে থাকে । প্রথমে fetch এর Operation হয়ে থাকে । তারপর fetch Operation থেকে যে Responce পাওয়া যায় , সেই Responce কে json এ Convert করা হয় । এরপর সব শেষে API এর Data কে Show করা হয় । নিচে আমার তার উধাহরণ দেওয়া হল - 
 
-const loadUserAsync = async () => {
-    const url = 'https://randomuser.https://randomuser.me/api/?gender-female';
-    try {
-        const res = await fetch(url);
-        const data = await res.json();
-        displayUser(data.results[0]);
-    }
-    catch (error) {
-        console.log(error);
-    }
+const LoadData2 = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+    console.log(data);
 }
+
+LoadData2();
 
 
 
