@@ -1,4 +1,4 @@
-                                              // JAVASCRIPT API Tutorial start //
+                                              // JAVASCRIPT-API-Tutorial-start //
 
 
 
@@ -84,4 +84,4 @@ const loadUserAsync = async () => {
 
 
 
-                                              // JAVASCRIPT API Tutorial end //
+                                              // JAVASCRIPT-API-Tutorial-end //
