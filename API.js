@@ -1,28 +1,21 @@
-                                              // JAVASCRIPT-API-Tutorial-start //
+// JAVASCRIPT-API-Tutorial-start //
 
 
-
-
-// ১। JAVASCRIPT API এর JSON Data কে ব্যবহার করতে হলে fetch ব্যবহার করতে হবে । নিচে তার উধাহরন দেওয়া হলো - 
+// 1. To use JSON data from a JavaScript API, fetch must be used. Below is an example -
 
 document.getElementById('API-Button').addEventListener('click', function () {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then(response => response.json())
         .then(json => console.log(json))
-}) 
+})
 
 
 
 
 
+// 2. To convert any JavaScript Array, Object, or Value into a JSON string, JSON.stringify is used. Below is an example -
 
-
-
-
-
-// ২। JAVASCRIPT এর যেকোন Array , Object বা Value কে JSON এর String এ convert করার জন্য JSON.stringify ব্যাবহার করা হয় । নিচে তার উধাহরন দেওয়া হলো -
-
-const Data1 = { Id: 1, Name: "KING ALVI", Job: "Bisnessman" };
+const Data1 = { Id: 1, Name: "KING ALVI", Job: "Businessman" };
 console.log(Data1);
 const stringifyByJSON1 = JSON.stringify(Data1);
 console.log(stringifyByJSON1);
@@ -31,14 +24,9 @@ console.log(stringifyByJSON1);
 
 
 
+// 3. To convert a JSON string back into a JavaScript Array, Object, or Value, JSON.parse is used. Below is an example -
 
-
-
-
-
-// ৩। JAVASCRIPT এর যেকোন Array , Object বা Value কে JSON এর String থেকে পুনুরায় JAVASCRIPT এর Array , Object বা Value তে রুপান্তর করার জন্য JSON.parse ব্যবহার করা হয় । নিচে তার উধাহরন দেওয়া হলো - 
-
-const Data2 = { Id: 1, Name: "KING ALVI", Job: "Bisnessman" };
+const Data2 = { Id: 1, Name: "KING ALVI", Job: "Businessman" };
 const stringifyByJSON2 = JSON.stringify(Data2);
 console.log(stringifyByJSON2);
 const parseByJSON = JSON.parse(stringifyByJSON2);
@@ -48,25 +36,20 @@ console.log(parseByJSON);
 
 
 
+// 4. In JavaScript, API data is typically fetched using two types of fetch operations. Below are examples -
 
-
-
-
-
-// ৪। JAVASCRIPT এ API Data কে ব্যবহার করার জন্য মূলত দুই রকমের fetch Operation করা হয় । নিচে আমার তার উধাহরণ দেওয়া হল -
-
-
-//// ১ । হলো Normal fetch , যেখানে একসাথে Operation হয়ে থাকে । 
+//// 1. Normal fetch - where operations occur synchronously.
 
 const loadUserFetch = () => {
-    const url = 'https://randomuser.https://randomuser.me/api/?gender-female';
+    const url = 'https://randomuser.me/api/?gender=female';
     fetch(url)
         .then(res => res.json())
         .then(data => displayUser(data.results[0]))
         .catch(error => console.log(error));
 }
 
-//// ২ । হলো async/await fetch , যেখানে একটি পর একটি Opreration হয়ে থাকে । প্রথমে fetch এর Operation হয়ে থাকে । তারপর fetch Operation থেকে যে Responce পাওয়া যায় , সেই Responce কে json এ Convert করা হয় । এরপর সব শেষে API এর Data কে Show করা হয় । নিচে আমার তার উধাহরণ দেওয়া হল - 
+//// 2. Async/Await fetch - where operations occur step by step.
+//// First, the fetch operation occurs, then the response is converted into JSON, and finally, the API data is displayed.
 
 const LoadData2 = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -76,8 +59,4 @@ const LoadData2 = async () => {
 
 LoadData2();
 
-
-
-
-
-                                              // JAVASCRIPT-API-Tutorial-end //
+// JAVASCRIPT-API-Tutorial-end //
